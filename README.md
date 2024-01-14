@@ -1,8 +1,10 @@
 # HomeViewSite
+First of i am not as much Active on Github so dont expect any Direct Support but i'll try to help as much as possible :)
 
 ## Installation
-To install this website on Ubutnu 20.4
+All of this was testen on Ubuntu Server
 
+To Install this follow all of these following commands
 ```bash
 sudo apt update && sudo apt upgrade
 ```
