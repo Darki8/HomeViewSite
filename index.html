@@ -1,13 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Index</title>
-</head>
-<body>
-<h1>Index Page</h1>
-<p>Home page of the website</p>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Index</title>
+    </head>
+    <body>
+    <h1>Index Page</h1>
+    <div id="SQLOutput">
+    </body>
+    <script type="module">
+        import 'mysql';
+        var con = createConnection({
+            host: "localhost",
+            user: "root",
+            password: "",
+            database: "mydb"
+        });
+        con.connect(function(err) {
+            if (err) throw err;
+            console.log("Connected!");
+            con.query("SELECT * FROM TABLENAME", function (err, result, fields) {
+                if (err) throw err;
+                console.log(result);
+                // Convert the result to JSON
+                var SQLOutput = JSON.stringify(result);
+                // Pass the JSON result to HTML
+                document.getElementById("SQLOutput").innerHTML = SQLOutput;
+            });
+        });
+    </script>
+
 </html>
