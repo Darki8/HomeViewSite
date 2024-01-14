@@ -48,3 +48,6 @@ then do this command to install all dependencies
 ```bash
 sudo npm init
 ```
+
+## IMPORTANT
+In the Files: index... and app.js  remember that there is an IP set of the Server. Change that to your liking
